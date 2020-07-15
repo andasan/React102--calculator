@@ -2,11 +2,15 @@ import React, {Component} from 'react';
 
 class KeyPadComponent extends Component {
     render(){
-        // console.log();
+        console.log(this.props);
 
       return(
-        <div className="button">
+        <div style={{ fontSize: '30px'}} className="button">
             {/* {console.log} */}
+{/* 
+            <div>
+                From keypad: {this.props.children}
+            </div> */}
           <button name="(" onClick={e => this.props.clickHandler(e.target.name)}>(</button>
           <button name="CE" onClick={e => this.props.clickHandler(e.target.name)}>CE</button>
           <button name=")" onClick={e => this.props.clickHandler(e.target.name)}>)</button>
@@ -28,7 +32,7 @@ class KeyPadComponent extends Component {
           <button name="7" onClick={e => this.props.clickHandler(e.target.name)}>7</button>
           <button name="8" onClick={e => this.props.clickHandler(e.target.name)}>8</button>
           <button name="9" onClick={e => this.props.clickHandler(e.target.name)}>9</button>
-          <button name="x" onClick={e => this.props.clickHandler(e.target.name)}>x</button>
+          <button name="*" onClick={e => this.props.clickHandler(e.target.name)}>*</button>
           <br/>
 
           <button name="." onClick={e => this.props.clickHandler(e.target.name)}>.</button>

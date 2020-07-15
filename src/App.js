@@ -14,6 +14,8 @@ class App extends Component {
   }
 
   buttonHandler = (button) => {
+    console.log(button);
+
     if(button === '='){
       //execute a function
       this.calculate()
@@ -24,7 +26,8 @@ class App extends Component {
       //exec a backspace
       this.backspace()
     }else{
-      this.state({
+      //sorry... it was this.state at first >.<
+      this.setState({
         result: this.state.result + button
       })
     }
@@ -59,7 +62,7 @@ class App extends Component {
 
   backspace = () => {
     this.setState({
-      result: this.state.result.splice(0, -1)
+      result: this.state.result.slice(0, -1)
     })
   }
 
@@ -69,6 +72,9 @@ class App extends Component {
         <h1>Simple Calculator</h1>
         <ResultComponent resultAttrib={this.state.result} />
         <KeyPadComponent clickHandler={this.buttonHandler} />
+        {/* <KeyPadComponent>
+          This is a text
+        </KeyPadComponent> */}
       </div>
     );
   }
